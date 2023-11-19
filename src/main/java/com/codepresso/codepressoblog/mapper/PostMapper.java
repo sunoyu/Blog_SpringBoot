@@ -8,5 +8,5 @@ import java.util.List;
 
 @Mapper
 public interface PostMapper {
-    List<Post> findAll();
+    List<Post> findAll();    /// 모든 데이터를 조회하는 함수. -> findAll이 호출될 때 post-mapper 바인딩
 }
