@@ -9,5 +9,11 @@
         ORDER BY id DESC
     </select>
 
+    <select id="findByPage" resultType="com.codepresso.codepressoblog.vo.Post">
+        select *
+        from post
+        order by id DESC
+        LIMIT #{limit} OFFSET #{offset}
+    </select>
 </mapper>
 

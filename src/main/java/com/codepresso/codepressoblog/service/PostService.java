@@ -18,4 +18,8 @@ public class PostService {
     public List<Post> getAllPost(){     // 반환만 하는 역할
         return postMapper.findAll();
     }
+
+    public List<Post> getPostByPage(Integer page, Integer size){
+        return postMapper.findByPage(size,(page-1)*size);     // page가 0부터 들어와서
+    }
 }
