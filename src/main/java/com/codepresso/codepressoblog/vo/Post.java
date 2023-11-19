@@ -10,6 +10,21 @@ public class Post {
     String username;
     Date createAt;
 
+
+    public Post(Integer id, String title, String content, String username) {
+        this.id = id;
+        this.title = title;
+        this.content = content;
+        this.username = username;
+    }
+    public Post(Integer id, String title, String content, String username, Date createAt) {
+        this.id = id;
+        this.title = title;
+        this.content = content;
+        this.username = username;
+        this.createAt = createAt;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -50,11 +65,5 @@ public class Post {
         this.createAt = createAt;
     }
 
-    public Post(Integer id, String title, String content, String username, Date createAt) {
-        this.id = id;
-        this.title = title;
-        this.content = content;
-        this.username = username;
-        this.createAt = createAt;
-    }
+
 }
