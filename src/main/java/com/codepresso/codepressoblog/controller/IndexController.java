@@ -21,7 +21,7 @@ public class IndexController {
 
     @RequestMapping(value = "/")
     public String index(Model model) {
-        List<Post> postList = postService.getAllPost();
+        List<Post> postList = postService.getPostByPage(1, 3);// 처음 진입 페이지:1 / 글 3개까지
         model.addAttribute("posts", postList);  // 키: 포스트, 값: 포스트리스트
         return "index";  // model을 index로 리턴 -> index.mustache로 보낸다.
     }
