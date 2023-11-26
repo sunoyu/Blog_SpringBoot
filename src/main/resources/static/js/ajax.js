@@ -23,11 +23,32 @@ $(function(){
                         "</p></div><hr class =\"my-4\" />");
                 }
 
+             });
+             $(this).attr("current-page", next_page);     // current-page값을 next_page 데이터로 변경하겠다.
+        });
 
-                });
+        $("#create_button").click(function(){
+            var title = $("#post-title").val();
+            var username = $("#post-username").val();
+            var content = $("#post-content").val();
 
-                });
-    $(this).attr("current-page", next_page);     // current-page값을 next_page 데이터로 변경하겠다.
+            $.ajax({
+                method: "POST",
+                url: "/post",
+                date: JSON.stringify({
+                    "title" : title,
+                    "username" : username,
+                    "content" : content
+                }),
+                contentType: "application/json"
+            })
+
+            .done(function(response){
+                console.log("Post creation success!");
+                window.location.href = "/";
+
+            });
+        });
 
 
     $(".comment-edit").hide();
@@ -39,4 +60,8 @@ $(function(){
     $(".comment-edit-cancel-button").click(function(){
         $(this).closest(".comment_text").find(".comment-edit").hide();
     });
+
+
+
+
 });
