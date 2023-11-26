@@ -22,5 +22,9 @@
         where id = #{id};
     </select>
 
+    <insert id="save">
+        INSERT INTO post(title, username, content)
+        VALUES(#{post.title}, #{post.username}, #{post.content});
+    </insert>
 </mapper>
 

@@ -17,4 +17,8 @@ public class PostResponseDto {
         this.content = post.getContent();
         this.username = post.getUsername();
     }
+
+    public Post getPost(){
+        return new Post(this.id, this.title, this.content, this.username);
+    }
 }

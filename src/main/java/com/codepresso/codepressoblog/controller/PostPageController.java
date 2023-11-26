@@ -21,4 +21,6 @@ public class PostPageController {
         model.addAttribute("post", post);
         return "post_detail";
     }
+
+
 }

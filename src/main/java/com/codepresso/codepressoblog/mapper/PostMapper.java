@@ -13,4 +13,6 @@ public interface PostMapper {
     List<Post> findByPage(@Param("limit") Integer limit, @Param("offset") Integer offset);
 
     Post findOne(@Param("id") Integer id);
+
+    Integer save(@Param("post") Post post);  // 저장을 하면 1을 반환
 }
