@@ -15,5 +15,12 @@
         order by id DESC
         LIMIT #{limit} OFFSET #{offset}
     </select>
+
+    <select id="findOne" resultType="com.codepresso.codepressoblog.vo.Post">
+        select *
+        FROM post
+        where id = #{id};
+    </select>
+
 </mapper>
 
