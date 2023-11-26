@@ -12,7 +12,7 @@ $(function(){
         .done(function(response) {
                 for(var post of response){     // 응답받은 글 리스트 요소를 0번쨰 부터 순회
                     $("#more-posts").append("<div class =\"post-preview\" >" +
-                        "<a href = \"#\">" +
+                        "<a href = \"/post/" + post.id + "\">" +
                         "<h2 class = \"post-title\">" +
                         post.title +
                         "</h2>\n" +
