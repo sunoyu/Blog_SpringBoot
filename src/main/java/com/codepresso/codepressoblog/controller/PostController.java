@@ -1,5 +1,6 @@
 package com.codepresso.codepressoblog.controller;
 
+import com.codepresso.codepressoblog.controller.dto.PostRequestDto;
 import com.codepresso.codepressoblog.controller.dto.PostResponseDto;
 import com.codepresso.codepressoblog.service.PostService;
 import com.codepresso.codepressoblog.vo.Post;
@@ -29,7 +30,7 @@ public class PostController {
     }
 
     @PostMapping("/post")
-    public String createPost(@RequestBody PostResponseDto postDto){
+    public String createPost(@RequestBody PostRequestDto postDto){
         Post post = postDto.getPost();
         postService.savePost(post);
 
